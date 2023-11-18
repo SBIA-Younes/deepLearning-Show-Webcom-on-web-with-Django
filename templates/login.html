@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block Content %}
+
+<div class="h-full max-w-3xl mx-auto">
+  <div class=" flex h-full items-center py-16">
+    <main class="w-full max-w-md mx-auto p-6">
+      <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 sm:p-7">
+          <div class="text-center">
+            <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">connecter Vous ici</h1>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              Bienveus dans la IDE-NET
+            </p>
+          </div>
+
+          <div class="mt-5">
+   
+            {% if error %}
+            <div class="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 before:mr-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ml-6 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
+              <p class="error">{{ error }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Form -->
+            <form  method="post" action="{% url 'account_login' %}">
+              {% csrf_token %}
+              <div class="grid gap-y-4">
+                <!-- Form Group -->
+                <div>
+                  <label for="username" class="block text-sm mb-2 dark:text-white"> "Nom d'utilisateur:</label>
+                  <div class="relative">
+                    <input type="text" id="username" name="username" required class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" >
+                    
+                  </div>
+                  <p class="hidden text-xs text-red-600 mt-2" id="email-error">"Veuillez inclure un nom d'utilisateur valide afin que nous puissions vous recontacter</p>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div>
+                  <div class="flex justify-between items-center">
+                    <label for="password" class="block text-sm mb-2 dark:text-white">Mot de passe:</label>
+                  
+                  </div>
+                  <div class="relative">
+                    <input type="password" id="password" name="password" required class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" required aria-describedby="password-error">
+                  
+                  </div>
+                  <p class="hidden text-xs text-red-600 mt-2" id="password-error">8+ characters required</p>
+                </div>
+                <!-- End Form Group -->
+
+
+                <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">Sign in</button>
+              </div>
+            </form>
+            <!-- End Form -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+{% endblock  %} 

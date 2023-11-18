@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <script src="{% static 'js/pr.js' %}" defer></script>
+
+  <title>IDE-NET</title>
+</head>
+<body>
+
+  
+  
+
+  {% block navbar %}
+  
+    <!-- ========== Secrion Navigation ========== -->
+    {% include 'navbar.html' %}
+    <!-- ========== End Navigation ========== -->
+  
+  {% endblock  %}
+
+  {% block Content %}
+    
+    <!-- ========== Secrion Blog ========== -->
+    {% include 'sectionBlog.html' %}
+    <!-- ========== End Blog ========== -->
+  
+  {% endblock  %}
+
+
+</body>
+</html>
