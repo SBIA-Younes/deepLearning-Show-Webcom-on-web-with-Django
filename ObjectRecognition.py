@@ -69,7 +69,10 @@ if __name__ == '__main__':
 
                 label = "{}: {:.2f}%".format(CLASSES[idx],
                     confidence * 100)
-                # print("Detected:", CLASSES[idx])
+                
+                
+                
+                
                 cv2.rectangle(frame, (startX, startY), (endX, endY),
                     COLORS[idx], 2)
                 y = startY - 15 if startY - 15 > 15 else startY + 15
